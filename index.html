@@ -34,30 +34,28 @@
         container: "viewDiv" // Div element
       });
 
-      const basemapGallery = new BasemapGallery({
-        view: view
-      });
+      let locateBtn = new Locate({ view: view });
+      let searchWidget = new Search({ view: view });
+      let bmToggleWidget = new BasemapToggle({
+        view: view,
+        nextBasemap: "topographic"
+      })
 
-      const locateBtn = new Locate({
-        view: view
-      });
+      // const basemapGallery = new BasemapGallery({
+      //   view: view
+      // });
 
-      const searchWidget = new Search({
-        view: view
-      });
+      // const locateBtn = new Locate({
+      //   view: view
+      // });
 
-      view.ui.add(locateBtn, {
-        position: "top-left"
-      });
+      // const searchWidget = new Search({
+      //   view: view
+      // });
 
-      view.ui.add(basemapGallery, {
-        position:  "top-right"
-      });
-
-      view.ui.add(searchWidget, {
-        position: "top-left"
-        //index: 2
-      });
+      view.ui.add(locateBtn, "top-left");
+      view.ui.add(bmToggleWidget, "bottom-right");
+      view.ui.add(searchWidget, "top-right");
 
     });  
   </script>
