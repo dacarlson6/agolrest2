@@ -14,10 +14,11 @@
   <script>
 
     require([
-      "esri/config", 
-      "esri/Map", 
-      "esri/views/MapView"
-    ], function(esriConfig, Map, MapView) {   
+      "esri/config",
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/widgets/BasemapGallery"
+    ], function(esriConfig, Map, MapView, BasemapGallery) {   
     
       esriConfig.apiKey = "AAPKba612eedccd74bbabe0e040dec19190bkMVVICJGBITVVx-yRWPSKUO0HiwM3rEFvcZUZ52GBZfyakj41U9ixXAI3lslJLyo";
       const map = new Map({
