@@ -17,8 +17,9 @@
       "esri/config",
       "esri/Map",
       "esri/views/MapView",
-      "esri/widgets/BasemapGallery"
-    ], function(esriConfig, Map, MapView, BasemapGallery) {   
+      "esri/widgets/BasemapGallery",
+      "esri/widgets/Locate"
+    ], function(esriConfig, Map, MapView, BasemapGallery, Locate) {   
     
       esriConfig.apiKey = "AAPKba612eedccd74bbabe0e040dec19190bkMVVICJGBITVVx-yRWPSKUO0HiwM3rEFvcZUZ52GBZfyakj41U9ixXAI3lslJLyo";
       const map = new Map({
@@ -34,6 +35,14 @@
 
       const basemapGallery = new BasemapGallery({
         view: view
+      });
+
+      const locateBtn = new Locate({
+        view: view
+      });
+
+      view.ui.add(locateBtn, {
+        position: "top-left"
       });
 
       view.ui.add(basemapGallery, {
