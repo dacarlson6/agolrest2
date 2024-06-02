@@ -34,16 +34,16 @@
         container: "viewDiv" // Div element
       });
 
-      const locateBtn = new Locate({ view: view });
-      //let searchWidget = new Search({ view: view });
-      const bmToggleWidget = new BasemapToggle({
-        view: view,
-        nextBasemap: "topographic"
-      });
+  // /*     const locateBtn = new Locate({ view: view });
+  //     //let searchWidget = new Search({ view: view });
+  //     const bmToggleWidget = new BasemapToggle({
+  //       view: view,
+  //       nextBasemap: "topographic"
+  //     }); */
 
-      // const basemapGallery = new BasemapGallery({
-      //   view: view
-      // });
+      const basemapGallery = new BasemapGallery({
+        view: view
+      });
 
       // const locateBtn = new Locate({
       //   view: view
@@ -54,7 +54,7 @@
       // });
 
       view.ui.add(locateBtn, "top-left");
-      view.ui.add(bmToggleWidget, "bottom-right");
+      view.ui.add(basemapGallery, "top-right");
       //view.ui.add(searchWidget, "top-right");
 
     });  
