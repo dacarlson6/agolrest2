@@ -34,7 +34,9 @@
         container: "viewDiv" // Div element
       });
 
-  //     //let searchWidget = new Search({ view: view });
+      const sources = [{
+        url: "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer"
+      }];
 
       const basemapGallery = new BasemapGallery({
         view: view
@@ -45,8 +47,9 @@
       });
 
       const searchWidget = new Search({
-        view: view
-      });
+        view: view,
+        sources: sources
+      });      
       
       view.ui.add(basemapGallery, {
         position: "top-right"
