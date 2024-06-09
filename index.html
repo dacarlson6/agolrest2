@@ -154,6 +154,13 @@
 
       //adding the feature layer to the map
       map.add(nrhpLayer);
+
+      //us airport layer
+      const usAirportLayer = new FeatureLayer({
+        url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_DAC/FeatureServer"
+      });
+
+      map.add(usAirportLayer);
       
       const sources = [{
         url: "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer"
