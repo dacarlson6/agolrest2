@@ -136,9 +136,12 @@
 
       //define a pop-up for nrhpLayer
       const popupNrhp = {
-        "title": "National Historic Landmark",
-        "content": "<b>Name: </b>{RESNAME}<br><b>Type: </b>{ResType}<br><b>Address: </b>{Address}"
-      }
+        title: "National Register of Historic Places",
+        content: "<b>Name:</b> {RESNAME}<br>" +
+           "<b>Type:</b> {ResType}<br>" +
+           "<b>Address:</b> {Address}<br>" +
+           "<a href='{NARA_URL}' target='_blank'>More Information</a>"
+      };
 
       //adding the constructor for the feature layer
       const nrhpLayer = new FeatureLayer({
