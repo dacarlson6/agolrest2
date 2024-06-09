@@ -209,7 +209,7 @@
       const heliportLayer = new FeatureLayer({
         url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_DAC/FeatureServer",
         renderer: heliportRenderer,
-        definitionExpression: "Type = 'Heliport'"  // SQL expression to filter for heliports
+        definitionExpression: "Type = 'HELIPORT'"  // SQL expression to filter for heliports
       });
 
       map.add(heliportLayer);
