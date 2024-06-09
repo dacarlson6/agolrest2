@@ -194,7 +194,26 @@
       });
 
       map.add(usAirportLayer);
-      
+
+      //heliport feature layer with custom icon
+      const heliportRenderer = {
+        type: "simple",
+        symbol: {
+          type: "picture-marker",  // autocasts as new PictureMarkerSymbol()
+          url: "https://dacarlson6.github.io/agol/helicopter-symbol-solid.svg",  // URL to the helicopter icon
+          width: "24px",
+          height: "24px"
+        }
+      };
+
+      const heliportLayer = new FeatureLayer({
+        url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_DAC/FeatureServer",
+        renderer: heliportRenderer,
+        definitionExpression: "Type = 'Heliport'"  // SQL expression to filter for heliports
+      });
+
+      map.add(heliportLayer);
+
       const sources = [{
         url: "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer"
       }];
