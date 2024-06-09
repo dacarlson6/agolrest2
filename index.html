@@ -81,6 +81,29 @@
 
       //adding the point to the graphicsLayer
       graphicsLayer.add(pointGraphic);
+
+      //define the polyline
+      const polyline = {
+        type: "polyline",
+        paths: [
+          [-87.81926, 42.58386], // start point
+          [-87.81500, 42.58300], // mid point
+          [-87.81300, 42.58000]  // end point
+        ]
+      };
+
+      const polylineSymbol = {
+        type: "simple-line",
+        color: [226, 119, 40],
+        width: 4
+      };
+
+      const polylineGraphic = new Graphic({
+        geometry: polyline,
+        symbol: polylineSymbol
+      });
+
+      graphicsLayer.add(polylineGraphic);
       
       const sources = [{
         url: "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer"
