@@ -58,10 +58,25 @@
         }
       };
 
+      //defining popup properties
+      const popupTemplate = {
+        title: "{Name}",
+        content: "{Description}"
+      }
+
+      const attributes = {
+        Name: "Clark Dietz, Inc.",
+        Description: "Kenosha, Wisconsin Office Location"
+      }
+
       //creating the point
       const pointGraphic = new Graphic({
         geometry: point,
-        symbol: simpleMarkerSymbol
+        symbol: simpleMarkerSymbol,
+
+        //adding popup properties
+        attributes: attributes,
+        popupTemplate:  popupTemplate
       });
 
       //adding the point to the graphicsLayer
