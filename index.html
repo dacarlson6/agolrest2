@@ -134,9 +134,19 @@
 
       graphicsLayer.add(polygonGraphic);
 
+      //define a pop-up for nrhpLayer
+      const popupNrhp = {
+        "title": "National Historic Landmark",
+        "content": "{RESNAME}<br>{ResType}<br>{Address}"
+      }
+
       //adding the constructor for the feature layer
       const nrhpLayer = new FeatureLayer({
-        url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/nrhp_points_v1/FeatureServer"
+        url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/nrhp_points_v1/FeatureServer",
+
+        //adding the popup here
+        outFields: ["RESNAME", "ResType", "Address"],
+        popupTemplate: popupNrhp
       });
 
       //adding the feature layer to the map
