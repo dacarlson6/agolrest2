@@ -104,6 +104,34 @@
       });
 
       graphicsLayer.add(polylineGraphic);
+
+      // Define the polygon
+      const polygon = {
+        type: "polygon",
+        rings: [
+          [-87.812560, 42.588738],
+          [-87.811361, 42.588794],
+          [-87.814836, 42.593050],
+          [-87.815200, 42.592782],
+          [-87.812560, 42.588738]
+        ]
+      };
+
+      const polygonSymbol = {
+        type: "simple-fill",
+        color: [227, 139, 79, 0.8],
+        outline: {
+          color: [255, 255, 255],
+          width: 1
+        }
+      };
+
+      const polygonGraphic = new Graphic({
+        geometry: polygon,
+        symbol: polygonSymbol
+      });
+
+      graphicsLayer.add(polygonGraphic);
       
       const sources = [{
         url: "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer"
