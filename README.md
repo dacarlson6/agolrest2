@@ -1,2 +1,2 @@
 # esrijs
-My Esri JS Map accessing AGOL
+lab focusing on agol rest
