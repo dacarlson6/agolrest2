@@ -219,6 +219,15 @@
         url: "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer"
       }];
 
+      const myAirports = new FeatureLayer({
+        url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/AirportLocations/FeatureServer",
+
+        outFields: ["AirportCode"],
+
+      });
+
+      map.add(myAirports);
+
       const basemapGallery = new BasemapGallery({
         view: view
       });
@@ -244,7 +253,20 @@
       view.ui.add(searchWidget, {
         position: "top-left",
         index: 2
-      }); 
+      });
+
+      const pointInfos = {
+        layer: myAirports
+      }
+
+      //Begin Editor constructor
+      const editor = new Editor({
+        view: view,
+        layerInfos: [pointInfos]
+      }); //end editor constructor
+
+      //add the widget to the view
+      view.ui.add(editor, "top-right");
 
     });  
   </script>
