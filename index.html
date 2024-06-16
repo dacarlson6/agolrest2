@@ -231,8 +231,8 @@
         }
       };
 
-      /* //const to make the airport labels
-      const airportLabels = {
+      //const to make the airport labels
+      const myAirportLabels = {
         symbol: {
           type: "text",
           color: "#FFFFFF",
@@ -243,15 +243,26 @@
             family: "Noto Sans",
             style: "italic",
             weight: "normal"
-          } */
+          }
+        },
+
+        labelPlacement: "above-right",
+        labelExpressionInfo: {
+          expression: "$feature.AirportCode;"
+        }
+      };
 
       const myAirports = new FeatureLayer({
         url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/AirportLocations/FeatureServer",
         renderer: myAirportRenderer, 
-        title: "My Airports"
-
-        //outFields: ["AirportCode"],
-
+        title: "My Airports",
+        outFields: ["AirportCode"],
+        labelingInfo: [myAirportLabels],
+        popupEnabled: true,
+        popupTemplate: {
+          title: "My Airports",
+          content: "This is {AirportCode}."
+        }
       });
 
       map.add(myAirports);
