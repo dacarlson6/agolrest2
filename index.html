@@ -220,8 +220,34 @@
         url: "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer"
       }];
 
+      //airport symbol for new layer
+      const myAirportRenderer = {
+        "type": "simple",
+        "symbol": {
+          "type": "picture-marker",
+          "url": "https://dacarlson6.github.io/agol/flight_takeoff_24dp_FILL0_wght400_GRAD0_opsz24.png",
+          "width": "18px",
+          "height": "18px"
+        }
+      }
+
+      /* //const to make the airport labels
+      const airportLabels = {
+        symbol: {
+          type: "text",
+          color: "#FFFFFF",
+          haloColor: "#5E8D74",
+          haloSize: "2px",
+          font: {
+            size: "12px",
+            family: "Noto Sans",
+            style: "italic",
+            weight: "normal"
+          } */
+
       const myAirports = new FeatureLayer({
         url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/AirportLocations/FeatureServer",
+        renderer: myAirportRenderer,
 
         outFields: ["AirportCode"],
 
@@ -277,7 +303,8 @@
       //add legend to the view
       view.ui.add(legend, "bottom-right");
 
-    });  
+    });
+
   </script>
 
   <!-- css to make a full screen map -->
