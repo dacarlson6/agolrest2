@@ -225,7 +225,7 @@
         type: "simple",
         symbol: {
           type: "picture-marker",
-          url: "https://dacarlson6.github.io/agol/flightsmode_24dp_FILL0_wght400_GRAD0_opsz24.png",
+          url: "https://dacarlson6.github.io/agolrest2/flightsmode_24dp_FILL0_wght400_GRAD0_opsz24.png",
           width: "24px",
           height: "24px"
         }
@@ -247,7 +247,8 @@
 
       const myAirports = new FeatureLayer({
         url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/AirportLocations/FeatureServer",
-        renderer: myAirportRenderer
+        renderer: myAirportRenderer, 
+        title: "My Airports"
 
         //outFields: ["AirportCode"],
 
